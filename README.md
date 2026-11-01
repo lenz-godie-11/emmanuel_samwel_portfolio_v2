@@ -71,4 +71,4 @@ Contact tests cover validation and server-side behavior; they do not replace vis
 
 ## Credits
 
-Originally based on the open-source portfolio by [Albert Mwasisoba](https://github.com/albizzy/albert_mwasisoba_portfolio_v2), used under the MIT licence. Content, branding and customizations are my own.
+Designed and developed by [Emmanuel Samwel](https://github.com/lenz-godie-11). Content, branding and customizations are my own.
