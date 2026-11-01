@@ -1,16 +1,16 @@
-# Albert Mwasisoba — Engineering Portfolio
+# Emmanuel Samwel — Engineering Portfolio
 
 A portfolio of frontend engineering, UI architecture and product work. Built with Next.js 16, React 19, strict TypeScript and Tailwind CSS 4, with Unbounded typography and GSAP motion.
 
-[Live portfolio](https://albert-mwasisoba-portfolio-v2.vercel.app/) · [Engineering case study](https://albert-mwasisoba-portfolio-v2.vercel.app/#case-studies) · [MIT licence](LICENSE)
+[Live portfolio](https://emmanuel-samwel-portfolio-v2.vercel.app/) · [Engineering case study](https://emmanuel-samwel-portfolio-v2.vercel.app/#case-studies) · [MIT licence](LICENSE)
 
 ## Run locally
 
 Use Node.js 22 or newer and Bun. The repository includes `bun.lock`.
 
 ```sh
-git clone https://github.com/albizzy/albert_mwasisoba_portfolio_v2.git
-cd albert_mwasisoba_portfolio_v2
+git clone https://github.com/lenz-godie-11/emmanuel_samwel_portfolio_v2.git
+cd emmanuel_samwel_portfolio_v2
 bun install --frozen-lockfile
 bun run dev
 ```
@@ -45,7 +45,7 @@ These are specific accessibility accommodations, not a claim of a completed WCAG
 
 **Benchmark status:** No versioned production Lighthouse report is committed yet. Performance, Accessibility, Best Practices and SEO scores, FCP/LCP, CLS and INP are therefore **not yet recorded here**. The site does not display invented 95+ scores or a zero-CLS guarantee.
 
-[Run a live PageSpeed Insights audit](https://pagespeed.web.dev/analysis?url=https%3A%2F%2Falbert-mwasisoba-portfolio-v2.vercel.app%2F) against the deployed homepage. This evaluates the current deployment, which may differ from your local checkout.
+[Run a live PageSpeed Insights audit](https://pagespeed.web.dev/analysis?url=https%3A%2F%2Femmanuel-samwel-portfolio-v2.vercel.app%2F) against the deployed homepage. This evaluates the current deployment, which may differ from your local checkout.
 
 To record reproducible results:
 
@@ -68,3 +68,7 @@ Contact tests cover validation and server-side behavior; they do not replace vis
 ## Licence
 
 [MIT](LICENSE). Project names and client visuals remain the property of their respective owners.
+
+## Credits
+
+Originally based on the open-source portfolio by [Albert Mwasisoba](https://github.com/albizzy/albert_mwasisoba_portfolio_v2), used under the MIT licence. Content, branding and customizations are my own.
