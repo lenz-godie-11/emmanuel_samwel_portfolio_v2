@@ -1,0 +1,102 @@
+.mobileBackdrop {
+    isolation: isolate;
+}
+
+.mobileBackdrop::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: linear-gradient(
+        to bottom,
+        var(--background) 0%,
+        var(--background) 2rem,
+        color-mix(in oklab, var(--background) 75%, transparent) 4rem,
+        color-mix(in oklab, var(--background) 50%, transparent) 6rem
+    );
+
+    -webkit-backdrop-filter: blur(64px);
+    backdrop-filter: blur(64px);
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        #000 0%,
+        #000 calc(100% - 7rem),
+        rgb(0 0 0 / 85%) calc(100% - 4.5rem),
+        rgb(0 0 0 / 60%) calc(100% - 3rem),
+        rgb(0 0 0 / 30%) calc(100% - 1.5rem),
+        rgb(0 0 0 / 10%) calc(100% - 0.75rem),
+        transparent 100%
+    );
+    mask-image: linear-gradient(
+        to bottom,
+        #000 0%,
+        #000 calc(100% - 7rem),
+        rgb(0 0 0 / 85%) calc(100% - 4.5rem),
+        rgb(0 0 0 / 60%) calc(100% - 3rem),
+        rgb(0 0 0 / 30%) calc(100% - 1.5rem),
+        rgb(0 0 0 / 10%) calc(100% - 0.75rem),
+        transparent 100%
+    );
+}
+
+.menuButton {
+    border-radius: 9999px;
+    border: 1.5px solid var(--editorial-line);
+    background: var(--editorial-paper);
+    color: var(--editorial-ink);
+}
+
+.menuButton:hover:not(.menuButtonOpen) {
+    border-color: var(--editorial-ink);
+    background: var(--editorial-yellow);
+}
+
+.menuButtonOpen {
+    border-color: rgb(255 255 255 / 18%);
+    background: rgb(255 255 255 / 10%);
+    color: #ffffff;
+}
+
+.navigationPanel {
+    width: min(320px, calc(100vw - 2rem));
+    max-height: calc(100dvh - 2rem);
+    border-radius: var(--editorial-radius-panel);
+    border: 1px solid rgb(255 255 255 / 12%);
+    background: var(--editorial-ink);
+    color: var(--editorial-paper);
+}
+
+.bookButton {
+    min-height: 3.25rem;
+    height: auto;
+    border-radius: 9999px;
+    border: 2px solid #ffffff;
+    background: var(--editorial-yellow);
+    color: var(--editorial-ink);
+    font-size: var(--editorial-text-label);
+    font-weight: var(--editorial-weight-heading);
+    letter-spacing: -0.01em;
+    box-shadow: 3px 3px 0 var(--editorial-blue);
+    transition:
+        transform 180ms ease,
+        box-shadow 180ms ease,
+        background-color 180ms ease;
+}
+
+.bookButton:hover {
+    background: var(--editorial-yellow-soft);
+    color: var(--editorial-ink);
+    box-shadow: 1px 1px 0 var(--editorial-blue);
+    transform: translate(2px, 2px);
+}
+
+@media (min-width: 48rem) {
+    .mobileBackdrop::before {
+        display: none;
+    }
+
+    .navigationPanel {
+        width: 23.75rem;
+    }
+}

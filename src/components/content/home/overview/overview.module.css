@@ -1,0 +1,233 @@
+.section {
+    --overview-lime: var(--editorial-olive, #c5cca6);
+    --overview-ink: var(--editorial-ink, #141413);
+    --overview-highlight: var(--editorial-olive-wash, #edf0df);
+    --overview-green: var(--editorial-green, #3a6b35);
+
+    background: var(--editorial-paper);
+    color: var(--overview-ink);
+    padding-block: var(--section-padding-y);
+    padding-inline: var(--section-padding-x);
+}
+
+.content {
+    align-items: center;
+    gap: 0;
+}
+
+.statement {
+    container-type: inline-size;
+    width: min(100%, 680px);
+}
+
+.composition {
+    position: relative;
+    margin-inline: 5%;
+    padding-bottom: 1.55em;
+    font-size: min(12.5cqw, 9vw);
+}
+
+.copy {
+    margin: 0;
+    font-weight: var(--editorial-weight-body, 400);
+    letter-spacing: -0.045em;
+    line-height: 1.25;
+    text-align: left;
+}
+
+.line {
+    display: block;
+    white-space: nowrap;
+}
+
+.outcome {
+    display: block;
+    margin-top: 1.8em;
+    font-size: 0.47em;
+    letter-spacing: -0.035em;
+    line-height: 1.4;
+}
+
+.copy strong,
+.highlight {
+    font-style: italic;
+    font-weight: var(--editorial-weight-display, 700);
+    letter-spacing: -0.045em;
+}
+
+.highlight {
+    position: relative;
+    display: inline-block;
+    margin-left: -0.28em;
+    padding: 0.025em 0.12em 0.035em 0.25em;
+    border-inline: 2px solid var(--overview-lime);
+    background: var(--overview-highlight);
+    color: var(--overview-green);
+    line-height: 0.98;
+}
+
+.rotator {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.28em;
+    max-width: 100%;
+}
+
+.pause {
+    display: inline-flex;
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--editorial-line);
+    border-radius: 50%;
+    background: var(--editorial-surface);
+    color: var(--overview-green);
+    cursor: pointer;
+    transition:
+        background-color 180ms ease,
+        border-color 180ms ease;
+}
+
+.pause svg {
+    width: 14px;
+    height: 14px;
+}
+
+.pause:hover {
+    border-color: var(--overview-green);
+    background: var(--overview-highlight);
+}
+
+.pause:focus-visible {
+    outline: 2px solid var(--overview-green);
+    outline-offset: 4px;
+}
+
+.reducedTerms {
+    display: none;
+}
+
+.handleStart,
+.handleEnd {
+    position: absolute;
+    width: 0.48em;
+    height: 0.48em;
+    background: var(--overview-lime);
+    pointer-events: none;
+}
+
+.handleStart {
+    top: -0.48em;
+    left: calc(-0.24em - 1px);
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+
+.handleEnd {
+    right: calc(-0.24em - 1px);
+    bottom: -0.48em;
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
+
+.sticker {
+    position: absolute;
+    z-index: 1;
+    width: max-content;
+    pointer-events: none;
+}
+
+.label {
+    display: block;
+    padding: 0.22em 0.58em 0.24em;
+    border: 2px solid var(--editorial-surface);
+    border-radius: 999px;
+    background: var(--overview-lime);
+    box-shadow:
+        0 0.14em 0.28em rgb(20 20 19 / 18%),
+        0 0.06em 0.12em rgb(20 20 19 / 12%);
+    color: var(--editorial-ink);
+    font-size: 0.36em;
+    font-weight: var(--editorial-weight-label, 500);
+    letter-spacing: -0.02em;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.target {
+    position: absolute;
+    width: 0.49em;
+    height: 0.49em;
+    color: var(--overview-lime);
+    stroke-width: 3;
+}
+
+.strategy {
+    top: 0.05em;
+    left: 56%;
+    transform: rotate(10deg);
+}
+
+.strategy .target {
+    bottom: calc(100% + 0.12em);
+    left: 0.52em;
+    transform: rotate(-15deg);
+}
+
+.meaning {
+    top: 3.6em;
+    left: 40%;
+    transform: rotate(3deg);
+}
+
+.meaning .target {
+    right: -0.62em;
+    bottom: 0.04em;
+    transform: rotate(7deg);
+}
+
+.scale {
+    top: 5.55em;
+    left: 11%;
+    transform: rotate(-7deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .pause,
+    .sticker {
+        display: none;
+    }
+
+    .reducedTerms {
+        display: inline;
+        font-size: 0.5em;
+        font-weight: 650;
+        letter-spacing: -0.035em;
+        line-height: 1.4;
+        white-space: normal;
+    }
+
+    .outcome {
+        margin-top: 0.5em;
+    }
+
+    .composition {
+        padding-bottom: 0;
+    }
+}
+
+.scale .target {
+    top: calc(100% + 0.22em);
+    left: 53%;
+    transform: rotate(-18deg);
+}
+
+@media (max-width: 479px) {
+    .section {
+        padding-block: 76px;
+    }
+
+    .highlight {
+        border-inline-width: 1px;
+    }
+}

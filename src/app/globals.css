@@ -1,0 +1,211 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-section-default: var(--section-default);
+    --color-section-default-foreground: var(--section-default-foreground);
+    --color-section-muted: var(--section-muted);
+    --color-section-muted-foreground: var(--section-muted-foreground);
+    --color-section-accent: var(--section-accent);
+    --color-section-accent-foreground: var(--section-accent-foreground);
+    --color-section-primary: var(--section-primary);
+    --color-section-primary-foreground: var(--section-primary-foreground);
+    --color-section-secondary: var(--section-secondary);
+    --color-section-secondary-foreground: var(--section-secondary-foreground);
+    --color-section-card: var(--section-card);
+    --color-section-card-foreground: var(--section-card-foreground);
+    --color-section-dark: var(--section-dark);
+    --color-section-dark-foreground: var(--section-dark-foreground);
+    --color-section-overlay: var(--section-overlay);
+    --color-ring: var(--ring);
+    --color-input: var(--input);
+    --color-border: var(--border);
+    --color-destructive: var(--destructive);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-accent: var(--accent);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-muted: var(--muted);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-secondary: var(--secondary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-primary: var(--primary);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-popover: var(--popover);
+    --color-card-foreground: var(--card-foreground);
+    --color-card: var(--card);
+    --radius-sm: calc(var(--radius) - 4px);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) + 4px);
+    --radius-2xl: calc(var(--radius) + 8px);
+    --radius-3xl: calc(var(--radius) + 12px);
+    --radius-4xl: calc(var(--radius) + 16px);
+}
+
+:root {
+    --radius: 0.625rem;
+    /* Shared layout & spacing tokens */
+    --container-max: 80rem;
+    --section-padding-y: clamp(4.5rem, 8vw, 7.5rem);
+    --section-padding-x: clamp(1rem, 3vw, 2.5rem);
+
+    /* Fixed colors and shapes shared by the editorial sections. */
+    --editorial-ink: #141413;
+    --editorial-muted: #6b6357;
+    --editorial-line: #dbddd3;
+    --editorial-paper: #f7f8f2;
+    --editorial-surface: #ffffff;
+    --editorial-yellow: #dfad49;
+    --editorial-yellow-soft: #f3e2ad;
+    --editorial-pink: #eb4f68;
+    --editorial-pink-soft: #f8cad3;
+    --editorial-blue: #3b6b88;
+    --editorial-blue-soft: #b7c6ef;
+    --editorial-green: #3a6b35;
+    --editorial-green-soft: #a9dfc6;
+    --editorial-olive: #c5cca6;
+    --editorial-olive-wash: #edf0df;
+    --editorial-danger: #b4234e;
+
+    --editorial-radius-panel: 28px;
+    --editorial-radius-tab: 20px;
+    --editorial-radius-tag: 5px 10px 5px 5px;
+    --editorial-text-fine: 0.6875rem;
+    --editorial-text-micro: 0.75rem;
+    --editorial-text-small: 0.8125rem;
+    --editorial-text-label: 0.875rem;
+    --editorial-text-body: 1rem;
+    --editorial-text-lead: 1.125rem;
+    --editorial-weight-body: 400;
+    --editorial-weight-label: 500;
+    --editorial-weight-heading: 600;
+    --editorial-weight-display: 700;
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.141 0.005 285.823);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.141 0.005 285.823);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.141 0.005 285.823);
+    --primary: oklch(0.21 0.006 285.885);
+    --primary-foreground: oklch(0.985 0 0);
+    --secondary: oklch(0.967 0.001 286.375);
+    --secondary-foreground: oklch(0.21 0.006 285.885);
+    --muted: oklch(0.967 0.001 286.375);
+    --muted-foreground: oklch(0.552 0.016 285.938);
+    --accent: oklch(0.967 0.001 286.375);
+    --accent-foreground: oklch(0.21 0.006 285.885);
+    --destructive: oklch(0.577 0.245 27.325);
+    --border: oklch(0.92 0.004 286.32);
+    --input: oklch(0.92 0.004 286.32);
+    --ring: oklch(0.705 0.015 286.067);
+    --chart-2: oklch(0.6 0.118 184.704);
+    --section-default: var(--background);
+    --section-default-foreground: var(--foreground);
+    --section-muted: color-mix(in oklab, var(--muted) 30%, transparent);
+    --section-muted-foreground: var(--foreground);
+    --section-accent: color-mix(in oklab, var(--accent) 30%, transparent);
+    --section-accent-foreground: var(--accent-foreground);
+    --section-primary: var(--primary);
+    --section-primary-foreground: var(--primary-foreground);
+    --section-secondary: var(--secondary);
+    --section-secondary-foreground: var(--secondary-foreground);
+    --section-card: var(--card);
+    --section-card-foreground: var(--card-foreground);
+    --section-dark: var(--foreground);
+    --section-dark-foreground: var(--background);
+    --section-overlay: oklch(0 0 0 / 45%);
+}
+
+.dark {
+    --background: oklch(0.141 0.005 285.823);
+    --foreground: oklch(0.985 0 0);
+    --card: oklch(0.21 0.006 285.885);
+    --card-foreground: oklch(0.985 0 0);
+    --popover: oklch(0.21 0.006 285.885);
+    --popover-foreground: oklch(0.985 0 0);
+    --primary: oklch(0.92 0.004 286.32);
+    --primary-foreground: oklch(0.21 0.006 285.885);
+    --secondary: oklch(0.274 0.006 286.033);
+    --secondary-foreground: oklch(0.985 0 0);
+    --muted: oklch(0.274 0.006 286.033);
+    --muted-foreground: oklch(0.705 0.015 286.067);
+    --accent: oklch(0.274 0.006 286.033);
+    --accent-foreground: oklch(0.985 0 0);
+    --destructive: oklch(0.704 0.191 22.216);
+    --border: oklch(1 0 0 / 10%);
+    --input: oklch(1 0 0 / 15%);
+    --ring: oklch(0.552 0.016 285.938);
+    --chart-2: oklch(0.696 0.17 162.48);
+    --section-overlay: oklch(0 0 0 / 60%);
+}
+
+@layer base {
+    * {
+        @apply border-border outline-ring/50;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+    }
+
+    ::selection {
+        background-color: color-mix(
+            in oklab,
+            var(--editorial-yellow) 45%,
+            transparent
+        );
+        color: var(--editorial-ink);
+    }
+
+    input:not(
+        [type='button'],
+        [type='checkbox'],
+        [type='color'],
+        [type='file'],
+        [type='hidden'],
+        [type='image'],
+        [type='radio'],
+        [type='range'],
+        [type='reset'],
+        [type='submit']
+    ),
+    textarea,
+    [contenteditable=''],
+    [contenteditable='true'] {
+        caret-color: var(--editorial-blue);
+    }
+
+    :is(
+        input:not(
+            [type='button'],
+            [type='checkbox'],
+            [type='color'],
+            [type='file'],
+            [type='hidden'],
+            [type='image'],
+            [type='radio'],
+            [type='range'],
+            [type='reset'],
+            [type='submit']
+        ),
+        textarea,
+        [contenteditable=''],
+        [contenteditable='true']
+    )[aria-invalid='true'] {
+        caret-color: var(--editorial-danger);
+    }
+}
+
+html.custom-cursor-active,
+html.custom-cursor-active * {
+    cursor: none !important;
+}
+
+html.custom-cursor-active iframe {
+    cursor: auto !important;
+}
